@@ -1,11 +1,13 @@
-function lotto(n) {
-  n = n.toString()
-  let arr = []
-  for(let i = 0 ; i<9999 ; i++){
-    let re ='0000'.substr( String(i).length ) + i + n[4] + n[5]
-    arr.push(re)
+function onlyUnique(arr) { 
+  var re
+  var counts = {};
+  for (var i = 0; i < arr.length; i++) {
+      counts[arr[i]] = 1 + (counts[arr[i]] || 0);
   }
-  return arr
+  for (const key in counts) {
+    if(counts[key] === 1 ) re = key
+  }
+  console.log(re)
+  return re
 }
-const re = lotto(120888)
-console.log (re)
+onlyUnique([0, 0, 0.55, 0, 0 ])

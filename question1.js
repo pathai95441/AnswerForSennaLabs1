@@ -1,7 +1,18 @@
-function profit(n) {
-  return (n.sell_price - n.cost_price) * n.inventory
+function result(n) {
+  n.forEach(e => {
+    if(e.cars.length === 1) console.log ( e.name + ' want to buy' + e.cars)
+    else{
+      let re = e.name + ' want to buy'
+      e.cars.forEach(e => {
+        re = re + e + ','
+      })
+      console.log(re)
+    }
+  })
+  
 }
-const re = profit({"cost_price": 225.89,
-        "sell_price": 550.00,
-        "inventory": 100})
-console.log (re)
+result([
+  { "name": "rick", "cars": ["Corvette Z06", "Lotus Exite S"] },
+  { "name": "john", "cars": ["BMW 320D"] },
+  { "name": "zing", "cars": ["Honda Jazz", "Honda Click", "Honda Waves"] }
+  ])
